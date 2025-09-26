@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeano Tolentino | UI/UX Designer & Frontend Developer</title>
+    <meta name="description" content="Portfolio of Jeano Tolentino, a UI/UX Designer and Frontend Developer creating beautiful digital experiences.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="theme-default">
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loader-container">
+            <div class="loader"></div>
+            <p>Loading Portfolio</p>
+        </div>
+    </div>
+
+    <!-- Theme Transition Overlay -->
+    <div class="theme-transition" id="themeTransition"></div>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+
+    <!-- Project Modal -->
+    <div class="modal" id="projectModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="modalTitle">Project Title</h3>
+                <button class="close-modal" id="closeModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <img src="" alt="Project Image" class="modal-image" id="modalImage">
+                <div class="modal-details">
+                    <div>
+                        <h4>Project Overview</h4>
+                        <p id="modalDescription">Project description goes here.</p>
+                        <div class="modal-tech" id="modalTech">
+                            <!-- Technology tags will be inserted here -->
+                        </div>
+                    </div>
+                    <div>
+                        <h4>Project Details</h4>
+                        <p><strong>Category:</strong> <span id="modalCategory">Web Design</span></p>
+                        <p><strong>Date:</strong> <span id="modalDate">January 2024</span></p>
+                        <p><strong>Client:</strong> <span id="modalClient">Personal Project</span></p>
+                    </div>
+                </div>
+                <div class="modal-actions">
+                    <a href="#" class="btn" id="modalLiveLink" target="_blank">
+                        <i class="fas fa-external-link-alt"></i> Live Demo
+                    </a>
+                    <a href="#" class="btn btn-outline" id="modalCodeLink" target="_blank">
+                        <i class="fab fa-github"></i> View Code
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header & Navigation -->
+    <header id="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo">
+                    <i class="fas fa-code"></i>
+                    <span>Jeano</span>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li class="theme-controls">
+                        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                            <i class="fas fa-palette"></i>
+                            <span class="tooltip">Theme Options</span>
+                        </button>
+                        <div class="theme-picker" id="themePicker">
+                            <h4>Choose Theme</h4>
+                            <div class="theme-options">
+                                <div class="theme-option theme-default active" data-theme="default">
+                                    <div class="theme-preview">
+                                        <span class="preview-1"></span>
+                                        <span class="preview-2"></span>
+                                        <span class="preview-3"></span>
+                                        <span class="preview-4"></span>
+                                    </div>
+                                    <span class="theme-name">Default</span>
+                                </div>
+                                <div class="theme-option theme-1" data-theme="1">
+                                    <div class="theme-preview">
+                                        <span class="preview-1"></span>
+                                        <span class="preview-2"></span>
+                                        <span class="preview-3"></span>
+                                        <span class="preview-4"></span>
+                                    </div>
+                                    <span class="theme-name">Vintage</span>
+                                </div>
+                                <div class="theme-option theme-2" data-theme="2">
+                                    <div class="theme-preview">
+                                        <span class="preview-1"></span>
+                                        <span class="preview-2"></span>
+                                        <span class="preview-3"></span>
+                                        <span class="preview-4"></span>
+                                    </div>
+                                    <span class="theme-name">Nature</span>
+                                </div>
+                                <div class="theme-option theme-3" data-theme="3">
+                                    <div class="theme-preview">
+                                        <span class="preview-1"></span>
+                                        <span class="preview-2"></span>
+                                        <span class="preview-3"></span>
+                                        <span class="preview-4"></span>
+                                    </div>
+                                    <span class="theme-name">Vibrant</span>
+                                </div>
+                            </div>
+                            <div class="theme-buttons">
+                                <button class="btn btn-outline" id="cycleTheme">
+                                    <i class="fas fa-sync-alt"></i> Cycle
+                                </button>
+                                <button class="btn btn-outline" id="randomTheme">
+                                    <i class="fas fa-random"></i> Random
+                                </button>
+                            </div>
+                        </div>
+                        <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle dark mode">
+                            <i class="fas fa-moon"></i>
+                            <span class="tooltip">Dark Mode</span>
+                        </button>
+                    </li>
+                </ul>
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Hi, I'm <span class="accent-text">Jeano Tolentino</span></h1>
+                    <div class="typing-container">
+                        <h2 class="typing-text">UI/UX Designer & Frontend Developer</h2>
+                    </div>
+                    <p>I create beautiful, user-friendly digital experiences with a focus on clean design and seamless functionality.</p>
+                    <div class="hero-btns">
+                        <a href="#portfolio" class="btn btn-large">
+                            <i class="fas fa-briefcase"></i>
+                            View My Work
+                        </a>
+                        <a href="#contact" class="btn btn-outline btn-large">
+                            <i class="fas fa-envelope"></i>
+                            Contact Me
+                        </a>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <span class="stat-number" data-count="3">0</span>
+                            <span class="stat-label">Projects</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number" data-count="1">0</span>
+                            <span class="stat-label">Years Experience</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number" data-count="3">0</span>
+                            <span class="stat-label">Happy Clients</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="image-container">
+                        <img src="https://images.unsplash.com/photo-1721243267011-9c31b383e2ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Web Development">
+                        <div class="floating-elements">
+                            <div class="floating-element element-1">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <div class="floating-element element-2">
+                                <i class="fas fa-palette"></i>
+                            </div>
+                            <div class="floating-element element-3">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-header">
+                <h2>About Me</h2>
+                <p>Get to know me better</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>A passionate aspiring UI/UX Designer and Frontend Developer, actively building my skills in creating beautiful and functional digital interfaces. My approach is holistic: I leverage a foundation in User Research and Prototyping to inform designs that are both aesthetically pleasing and highly usable.
+
+My background in Graphic Design, Beta Testing, and Product Reviews has sharpened my eye for detail and user advocacy, ensuring the final product not only looks great but also provides an exceptional user experience. I'm excited to apply my growing technical and design expertise to contribute to meaningful projects.
+
+</p>
+                   
+                    <div class="skills">
+                        <span class="skill">UI/UX Design</span>
+                        <span class="skill">Graphic Design</span>
+                        <span class="skill">Social Media Managing</span>
+                        <span class="skill">Software Troubleshooting</span>
+                        <span class="skill">Beta Testing</span>
+                        <span class="skill">Product Reviews</span>
+                        <span class="skill">User Research</span>
+                        <span class="skill">Prototyping</span>
+                    </div>
+                    
+                    <!-- Skills Progress Bars -->
+                    <div class="skills-progress">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">UI/UX Design</span>
+                                <span class="skill-percentage">60%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="85"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">Graphic Design</span>
+                                <span class="skill-percentage">75%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="90"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">Social Media Managing</span>
+                                <span class="skill-percentage">75%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="80"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">Software Troubleshooting</span>
+                                <span class="skill-percentage">95%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="75"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+                <div class="about-image">
+                    <div class="image-card">
+                        <img src="https://images.unsplash.com/photo-1731980274637-1453e9deb4ea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Jeano Tolentino">
+                        <div class="image-overlay">
+                            <h3>Jeano Tolentino</h3>
+                            <p>UI/UX Designer & Developer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>My Services</h2>
+                <p>What I can do for you</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-pencil-ruler"></i>
+                    </div>
+                    <h3>UI/UX Design</h3>
+                    <p>Creating intuitive and visually appealing user interfaces with a focus on user experience and accessibility.</p>
+                    <ul>
+                        <li>User Research</li>
+                        <li>Wireframing</li>
+                        <li>Prototyping</li>
+                        <li>Visual Design</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Frontend Development</h3>
+                    <p>Building responsive and interactive websites using modern technologies and best practices.</p>
+                    <ul>
+                        <li>HTML/CSS/JavaScript</li>
+                        <li>React Development</li>
+                        <li>Responsive Design</li>
+                        <li>Performance Optimization</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Mobile Design</h3>
+                    <p>Designing mobile-first experiences that work seamlessly across all devices and screen sizes.</p>
+                    <ul>
+                        <li>Mobile UI Design</li>
+                        <li>Graphic Designing</li>
+                        <li>Cross-platform Design</li>
+                        <li>User Testing</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio" id="portfolio">
+        <div class="container">
+            <div class="section-header">
+                <h2>My Portfolio</h2>
+                <p>Check out my latest work</p>
+            </div>
+            <div class="portfolio-filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="web">Web Design</button>
+                <button class="filter-btn" data-filter="app">App Development</button>
+                <button class="filter-btn" data-filter="ui">UI/UX</button>
+            </div>
+            
+            <!-- Portfolio Grid for Desktop -->
+            <div class="portfolio-grid" id="portfolioGrid">
+                <!-- Portfolio items will be populated by JavaScript -->
+            </div>
+            
+            <!-- Portfolio Carousel for Mobile -->
+            <div class="portfolio-carousel" id="portfolioCarousel">
+                <div class="carousel-track" id="carouselTrack">
+                    <!-- Carousel items will be populated by JavaScript -->
+                </div>
+                <div class="carousel-nav" id="carouselNav">
+                    <!-- Carousel navigation dots will be populated by JavaScript -->
+                </div>
+            </div>
+            
+            <div class="portfolio-cta">
+                <p>Interested in working together?</p>
+                <a href="#contact" class="btn btn-large">
+                    <i class="fas fa-paper-plane"></i>
+                    Start a Project
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>Testimonials</h2>
+                <p>What clients say about my work</p>
+            </div>
+            <div class="testimonials-container">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="quote-icon">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p>Jeano delivered an exceptional website that exceeded our expectations. His attention to detail and creative approach made the entire process smooth and enjoyable.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="Client">
+                        <div class="author-info">
+                            <h4>Michael Johnson</h4>
+                            <p>CEO, TechSolutions</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="quote-icon">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p>Working with Jeano was a great experience. He understood our vision and translated it into a beautiful, functional design that our users love.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Client">
+                        <div class="author-info">
+                            <h4>Sarah Williams</h4>
+                            <p>Product Manager, InnovateCo</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="quote-icon">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p>Jeano's expertise in both design and development made him the perfect choice for our project. The result was a seamless user experience that drove engagement.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80" alt="Client">
+                        <div class="author-info">
+                            <h4>Robert Chen</h4>
+                            <p>Marketing Director, BrandWorks</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Get In Touch</h2>
+                <p>Let's work together</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h3>Location</h3>
+                            <p>Olongapo City, PH</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h3>Email</h3>
+                            <p>10969jeano@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <h3>Phone</h3>
+                            <p>+639121372447</p>
+                        </div>
+                     </div>
+                    <div class="social-links">
+                        <a href="https://ph.linkedin.com/in/jeano-tolentino-b62477359" target="_blank" class="social-link" title="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://github.com/g-tolentino" target="_blank" class="social-link" title="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://x.com/tolentino_jeano" target="_blank" class="social-link" title="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://www.facebook.com/jinotolentino999/" target="_blank" class="social-link" title="Facebook">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                    </div>
+                </div>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" class="form-control" required>
+                        <div class="error-message" id="nameError">Please enter your name</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Your Email</label>
+                        <input type="email" id="email" class="form-control" required>
+                        <div class="error-message" id="emailError">Please enter a valid email</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" class="form-control" required>
+                        <div class="error-message" id="subjectError">Please enter a subject</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Your Message</label>
+                        <textarea id="message" class="form-control" required></textarea>
+                        <div class="error-message" id="messageError">Please enter your message</div>
+                    </div>
+                    <button type="submit" class="btn btn-large">
+                        <i class="fas fa-paper-plane"></i>
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <i class="fas fa-code"></i>
+                        <span>Jeano Tolentino</span>
+                    </div>
+                    <p>Creating beautiful, functional digital experiences with a focus on user-centered design.</p>
+                    <div class="social-links">
+                        <a href="https://ph.linkedin.com/in/jeano-tolentino-b62477359" target="_blank" class="social-link" title="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://github.com/g-tolentino" target="_blank" class="social-link" title="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://x.com/tolentino_jeano" target="_blank" class="social-link" title="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://www.facebook.com/jinotolentino999/" target="_blank" class="social-link" title="Facebook">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-services">
+                    <h3>Services</h3>
+                    <ul>
+                        <li>UI/UX Design</li>
+                        <li>Frontend Development</li>
+                        <li>Mobile Design</li>
+                        <li>Responsive Web Design</li>
+                        <li>Brand Identity</li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to my newsletter for the latest updates and projects.</p>
+                    <form class="newsletter-form" id="newsletterForm">
+                        <input type="email" placeholder="Your Email" required>
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Jeano Tolentino. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
